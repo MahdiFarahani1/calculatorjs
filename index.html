@@ -1,0 +1,210 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="css.css">
+        <script src="js.js"></script>
+        <title>calculator</title>         
+
+      </head>
+      
+      <body>
+        <div id="cal_main">
+        <p id="textfake"></P>
+
+
+        <div id="tt">0.0</div>
+
+                 
+                  
+
+        <Div id="del" onclick="" class="box">C</Div>
+        <Div id="" onclick="" class="box">CE</Div>
+        <Div id="backslash" onclick="" class="box">&lt;&lt;</Div>
+        <Div id="div" onclick="" class="box">/</Div>
+        
+
+        <Div id="7" onclick="" class="box numbers">7</Div>
+        <Div id="8" onclick="" class="box numbers">8</Div>
+        <Div id="9" onclick="" class="box numbers">9</Div>
+        <Div id="zarb" onclick="" class="box">*</Div>
+
+        <Div id="4" onclick="" class="box numbers">4</Div>
+        <Div id="5" onclick="" class="box numbers">5</Div>
+        <Div id="6" onclick="" class="box numbers">6</Div>
+        <Div id="mines" onclick="" class="box">-</Div>
+
+        <Div id="1" onclick="" class="box numbers">1</Div>
+        <Div id="2" onclick="" class="box numbers">2</Div>
+        <Div id="3" onclick="" class="box numbers">3</Div>
+        <Div id="plus" onclick="" class="box">+</Div>
+       
+        <Div id="pm" onclick="" class="box">+-</Div>
+        <Div id="0" onclick="" class="box numbers">0</Div>
+        <Div id="point" onclick="" class="box">.</Div>
+        <Div id="resualt" onclick="" class="box">=</Div>
+       
+        </div>
+
+        
+       
+
+<script>
+var Mytext = document.getElementById("tt");
+
+var pm = window.document.querySelector("#pm");
+var backslash = document.querySelector("#backslash");
+var point = document.querySelector("#point");
+var del = document.querySelector("#del");
+
+var numbers = window.document.querySelectorAll(".numbers");
+
+var plus = document.querySelector("#plus");
+var mines = document.querySelector("#mines");
+var div = document.querySelector("#div");
+var zarb = document.querySelector("#zarb");
+
+let resualt = document.getElementById("resualt");
+
+var textfake = document.querySelector("#textfake");
+
+
+
+del.addEventListener("click",(e)=>{
+
+Mytext.textContent = "0.0";
+setpoint = false;
+
+});
+
+backslash.addEventListener("click", (e)=>{
+
+if(Mytext.textContent != null){
+    var len = Mytext.textContent.length;
+Mytext.textContent = Mytext.textContent.slice(0,len - 1);
+}else{
+    Mytext.textContent = "0.0";
+
+}
+
+});
+pm.addEventListener("click",(e)=> {
+
+    Mytext.textContent = Mytext.textContent * -1;
+})
+
+var setpoint = false;
+point.addEventListener("click",(e)=> {
+if (setpoint == false) {
+    Mytext.textContent += "."; 
+    setpoint = true;
+}
+    
+   
+})
+
+
+numbers.forEach((i) =>{
+
+i.addEventListener("click",(e) =>{
+    if (Mytext.textContent == "0.0") {
+        Mytext.textContent = e.target.textContent; 
+    }else{
+        Mytext.textContent += e.target.textContent;  
+
+    }
+
+});
+
+})
+var number1,number2;
+let resualtt ;
+var opraitor = "";
+
+plus.addEventListener("click", (e)=>{
+
+    number1 = Number(Mytext.textContent);
+    Mytext.textContent = "0.0";
+    opraitor = "+";
+    textfake.textContent = number1 +"  " + opraitor;
+    setpoint = false;
+});
+
+div.addEventListener("click",(e)=>{
+
+number1 = Number(Mytext.textContent);
+Mytext.textContent = "0.0";
+opraitor = "/";
+textfake.textContent = number1 +"  " + opraitor;
+setpoint = false;
+});
+
+mines.addEventListener("click",(e)=>{
+number1 = Number(Mytext.textContent);
+Mytext.textContent = "0.0";
+opraitor = "-";
+textfake.textContent = number1 +"  " + opraitor;
+setpoint = false;
+});
+
+zarb.addEventListener("click",(e)=>{
+number1 = Number(Mytext.textContent);
+Mytext.textContent = "0.0";
+opraitor = "*";
+textfake.textContent = number1 +"  " + opraitor;
+setpoint = false;
+});
+
+
+
+resualt.addEventListener("click",(e)=>{
+
+switch (opraitor) {
+    case "+":
+    number2 = Number(Mytext.textContent);    
+    resualtt = number1 + number2;
+    Mytext.textContent = resualtt;
+    textfake.textContent = "";
+    
+        break;
+
+        case  "-":
+number2 = Number(Mytext.textContent);
+resualt = number1 - number2;
+Mytext.textContent = resualt;
+textfake.textContent = "";
+
+
+break;
+
+case  "/":
+number2 = Number(Mytext.textContent);
+resualt = number1 / number2;
+Mytext.textContent = resualt;
+textfake.textContent = "";
+
+
+break;
+
+case  "*":
+number2 = Number(Mytext.textContent);
+resualt = number1 * number2;
+Mytext.textContent = resualt;
+textfake.textContent = "";
+
+
+
+break;
+
+}
+
+});
+
+
+
+ 
+  
+</script>
+
+
+      </body>
+</html>

@@ -1,0 +1,73 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.box{
+    width: 25%;
+    height: 40px;
+    background-color: rgb(179, 238, 196);
+ display: inline-block;
+ text-align: center;
+ padding-top: 15px;
+ border-radius: 30px;
+
+float: left;
+ margin: auto;
+ transform: translate(0,20px);
+ box-shadow: 2px 2px 2px 2px;
+
+}
+body{
+
+    background-color: rgb(22, 34, 30);
+    
+}
+#TT{
+    color: aliceblue;
+    border: solid rgb(47, 54, 54) 1px;
+    padding: 5px;
+    height: 30px;
+   margin: 10px;
+   box-shadow: inset 1px 1px 1px 1px;
+   box-shadow: inset -1px -1px ;
+   animation: Led 1s infinite ;
+   
+  
+}
+#textfake{
+    color: rgb(46, 50, 54);
+    padding: 6px;
+    display: inline-block;
+    float: right;
+    position: absolute;
+    right: 30;
+    top: 35;
+   
+   
+}
+.box:hover{
+
+    opacity: 60%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px inset;
+
+    
+}
+#cal_main{
+    margin: auto;
+
+    transform: translate(0,30%);
+    width: 30%;
+    height: 400px;
+    background-color: rgb(9, 13, 17);
+    overflow: hidden;
+    padding: 10px; 
+    border-radius: 10px;
+    border: 2px solid rgb(15, 15, 15);
+    
+}
+@keyframes Led{
+    from{ box-shadow: 1px 1px 1px 1px inset;}
+    to{ box-shadow: 0px 0px 0px 0px inset;}
+}
